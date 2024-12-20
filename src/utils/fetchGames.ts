@@ -1,3 +1,4 @@
+'use client'
 import { GameResponse } from "./interfaces/GameData"
 
 export const getGames = async (page?: number): Promise<GameResponse> => {
