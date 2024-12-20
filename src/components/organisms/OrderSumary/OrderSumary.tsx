@@ -18,7 +18,7 @@ export const OrderSumary = ({
     })
   }
   return (
-    <section className='flex w-[522px]'>
+    <section className='flex lg:w-[522px] w-full'>
       <div className="flex flex-col w-full">
         <div className="w-full border-[0.5px] rounded-lg border-stroke-light h-fit px-6 py-8 mb-8">
           <p className="text-2xl font-bold">Order sumary</p>

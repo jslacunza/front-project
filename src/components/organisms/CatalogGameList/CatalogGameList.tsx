@@ -7,7 +7,7 @@ interface CatalogGameListProps {
 
 export const CatalogGameList = ({ gameList }: CatalogGameListProps) => {
   return (
-    <section className="grid grid-cols-3 w-full gap-12">
+    <section className="grid lg:grid-cols-3 grid-cols-1 w-full gap-12 ">
       {gameList.map((game) => {
         return (
           <GameCard

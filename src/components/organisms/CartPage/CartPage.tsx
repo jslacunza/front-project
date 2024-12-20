@@ -16,7 +16,7 @@ export const CartPage = () => {
   return (
     <>
       <PageTitle text='Your Cart' subtitle={`${gameList.length} item${gameList.length > 1 ? 's' : ''}`} />
-      <div className="flex w-full justify-between">
+      <div className="flex lg:flex-row flex-col w-full justify-between">
         <CartGameList gameList={gameList} />
         <OrderSumary gameList={gameList} />
       </div>

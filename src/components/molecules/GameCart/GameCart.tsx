@@ -17,11 +17,12 @@ export const GameCart = ({
 }: GameCartProps) => {
   console.log('image: ', image);
   return (
-    <article className='w-full flex flex-row p-5 justify-between h-[196px]'>
-      <div className="w-[256px]">
+    <article className='w-full flex lg:flex-row flex-col p-5 justify-between lg:h-[196px] h-fit'>
+      <div className="flex justify-between lg:w-[256px] w-full gap-4">
         <ImageContainer style='gameCart' imageSrc={image} alt={name} />
+        <p className="lg:hidden block">X</p>
       </div>
-      <div className="flex flex-col w-[318px] justify-between">
+      <div className="flex flex-col lg:w-[318px] w-full justify-between lg:mt-0 mt-5">
         <div>
           <p className="uppercase text-font-light font-bold">{genre}</p>
           <p className="font-bold text-xl">{name}</p>
@@ -33,7 +34,7 @@ export const GameCart = ({
           <p className="text-right text-xl font-bold">${price}</p>
         </div>
       </div>
-      <p>X</p>
+      <p className="lg:block hidden">X</p>
     </article>
   )
 }

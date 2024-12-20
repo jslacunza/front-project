@@ -35,7 +35,7 @@ export function CatalogPage({
       <PageTitle text='Top Sellers' />
       <hr />
       <CatalogGameList gameList={gamesList} />
-        <div className="w-[137px]">
+        <div className="lg:w-[137px]">
           <Button
             width="full"
             style="dark"

@@ -7,7 +7,7 @@ interface CartGameListProps {
 
 export const CartGameList = ({ gameList }: CartGameListProps) => {
   return (
-    <section className="flex flex-col w-[678px]">
+    <section className="flex flex-col lg:w-[678px] f-full">
       {gameList.map((game, index) => {
         return (
           <>

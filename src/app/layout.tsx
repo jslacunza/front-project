@@ -22,8 +22,8 @@ export default function RootLayout ({
       <body className={`${archivo.className} flex min-h-screen w-screen flex-col items-center overflow-x-hidden`}>
         <Header />
         <Breadcrum />
-        <main className='grow w-full w-full max-w-screen-xl bg-red'>
-          <div className='flex gap-12 w-full flex-col py-12'>
+        <main className='grow w-full max-w-screen-xl bg-red'>
+          <div className='flex gap-12 w-full flex-col py-12 lg:px-0 px-4'>
             {children}
           </div>
         </main>
