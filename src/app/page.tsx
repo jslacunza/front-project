@@ -1,9 +1,8 @@
-"use client"
 import { CatalogPage } from "@/components/organisms/CatalogPage/CatalogPage";
 import { getGames } from "@/utils/fetchGames";
 
 export default async function Home() {
-  const data = await getGames()
+  const data = await getGames({})
 
   return (
     <CatalogPage

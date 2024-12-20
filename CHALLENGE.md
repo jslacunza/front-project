@@ -22,7 +22,7 @@ The "See more" functionality should be implemented using the “page” URL para
 
 - ✅ Games added to the cart should persist on local storage.
 - Deployment of the web app on Vercel from your own GitHub repository.
-- The web app must have a responsive design.
+- ✅ The web app must have a responsive design.
 - Implement unit testing.
 - ✅ Do not use any 3rd party components like Material-ui, Shadcn-ui, etc. Use the TailwindCSS config file for colors, etc.
 - ✅ In the footer, the Apply Digital logo should redirect you to the route "/".
@@ -41,7 +41,7 @@ The "See more" functionality should be implemented using the “page” URL para
 
 - It should display every item added to the cart, including `name`, `description`, `price`, `image`, `genre`, and display the "New" label using the `isNew` attribute.
 - The "X" button on each item should remove it from the cart.
-- The Order Summary section should display the items quantity, each item's price and the order total.
+- ✅ The Order Summary section should display the items quantity, each item's price and the order total.
 - ✅ It should display a "Back to Catalog" button that takes back to "/"
 
 ## WHAT WILL BE EVALUATED?
