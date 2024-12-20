@@ -1,10 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   swcMinify: true,
-  experimental: {
-    swcLoader: true,
-    swcMinify: true,
-  },
 };
-
-export default nextConfig;
