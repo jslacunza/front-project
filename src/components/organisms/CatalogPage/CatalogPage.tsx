@@ -53,7 +53,7 @@ export function CatalogPage({
     <>
       <div>
         <PageTitle text='Top Sellers' />
-        <div className="flex justify-end">
+        <div className="flex lg:justify-end">
           <Filter filterList={availableFilters} onClickFilter={handleFilter} />
         </div>
         <hr />

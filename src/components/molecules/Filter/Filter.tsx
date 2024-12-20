@@ -13,14 +13,14 @@ export const Filter = ({
   const router = useRouter()
   const [selectedFilter, setSelectedFilter] = useState('All')
   const [isOpen, setIsOpen] = useState(false)
+
   const handleOpen = () => {
-    setIsOpen(true)
+    setIsOpen(!isOpen)
   }
 
   const handleSelect = (filter: string) => {
     if (filter === selectedFilter) {
       setSelectedFilter('All')
-      // onClickFilter('All')
       router.push('/')
     } else {
       onClickFilter(filter)
@@ -32,10 +32,10 @@ export const Filter = ({
 
 
   return (
-    <div className="flex text-xl h-[56px] gap-6 relative">
+    <div className="flex text-xl h-[56px] gap-6 relative lg:mt-0 mt-8 w-full lg:w-auto">
       <p className="font-bold">Genre</p>
       <p>|</p>
-      <div className="w-[237px]" onClick={handleOpen}>
+      <div className="lg:w-[237px]" onClick={handleOpen}>
         <p>{selectedFilter}</p>
       </div>
       {isOpen && (
