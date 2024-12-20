@@ -1,9 +1,8 @@
 'use client'
+import { useEffect, useState } from 'react'
 import { Button } from '@/components/atoms/Button/Button'
 import { ImageContainer } from '@/components/atoms/ImageContainer/ImageContainer'
-import { useHandleLocalStorage } from '@/utils/handleLocalStorage'
 import { GameData } from '@/utils/interfaces/GameData'
-import { useEffect, useState } from 'react'
 
 export const GameCard = ({
   genre,
@@ -14,40 +13,34 @@ export const GameCard = ({
   id,
   description
 }: GameData) => {
-  const { addToCart, removeFromCart, isInCart } = useHandleLocalStorage()
   const [inCart, setInCart] = useState(false)
 
   const handleClick = () => {
-    // const cart = JSON.parse(localStorage.getItem('cart') || '[]')
-    // if (!inCart) {
-    if (!isInCart(id)) {
-      setInCart(true)
-      addToCart({
-        id,
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    const isInCart = cart.map((game: GameData) => game.id).includes(id)
+    if (isInCart) {
+      const newCart = cart.filter((game: GameData) => game.id !== id)
+      localStorage.setItem('cart', JSON.stringify(newCart))
+    } else {
+      !isInCart && localStorage.setItem('cart', JSON.stringify([...cart, {
         genre,
         image,
         name,
-        description,
         price,
         isNew,
-      })
+        id,
+        description
+      }]))
     }
-    else {
-      setInCart(false)
-      removeFromCart(id)
-    }
+    setInCart(!inCart)
   }
 
   useEffect(() => {
-    if (id && isInCart(id)) setInCart(isInCart(id))
-  }, [id, isInCart])
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    const isInCart = cart.map((game: GameData) => game.id).includes(id)
+    setInCart(isInCart)
+  }, [id])
 
-  // useEffect(() => {
-  //   // if (typeof window !== 'undefined') {
-  //   // }
-  //   const cart = localStorage.getItem('cart')
-  //   console.log(`cart/id${id}: `, cart);
-  // },[inCart, id])
 
   return (
     <article className='w-full h-[436px] rounded-2xl border-[0.5px] p-6 border-stroke-light flex flex-col gap-5 relative'>

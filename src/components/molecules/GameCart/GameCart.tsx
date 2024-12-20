@@ -1,4 +1,5 @@
 import { ImageContainer } from "@/components/atoms/ImageContainer/ImageContainer"
+import { GameData } from "@/utils/interfaces/GameData"
 
 interface GameCartProps {
   genre: string
@@ -6,6 +7,7 @@ interface GameCartProps {
   name: string
   description: string
   price: number
+  updateGameList: (gameList: GameData[]) => void
 }
 
 export const GameCart = ({
@@ -13,14 +15,21 @@ export const GameCart = ({
   image,
   name,
   description,
-  price
+  price,
+  updateGameList
 }: GameCartProps) => {
-  console.log('image: ', image);
+  const handleRemoveGame = () => {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    const newCart = cart.filter((game: GameCartProps) => game.name !== name)
+    updateGameList(newCart)
+    localStorage.setItem('cart', JSON.stringify(newCart))
+  }
+
   return (
     <article className='w-full flex lg:flex-row flex-col p-5 justify-between lg:h-[196px] h-fit'>
       <div className="flex justify-between lg:w-[256px] w-full gap-4">
         <ImageContainer style='gameCart' imageSrc={image} alt={name} />
-        <p className="lg:hidden block">X</p>
+        <p onClick={handleRemoveGame} className="lg:hidden block">X</p>
       </div>
       <div className="flex flex-col lg:w-[318px] w-full justify-between lg:mt-0 mt-5">
         <div>
@@ -34,7 +43,7 @@ export const GameCart = ({
           <p className="text-right text-xl font-bold">${price}</p>
         </div>
       </div>
-      <p className="lg:block hidden">X</p>
+      <p onClick={handleRemoveGame} className="lg:block hidden">X</p>
     </article>
   )
 }

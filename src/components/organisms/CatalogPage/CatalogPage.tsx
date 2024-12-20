@@ -1,9 +1,9 @@
 'use client'
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { PageTitle } from "@/components/atoms/PageTitle/PageTitle";
 import { CatalogGameList } from "../CatalogGameList/CatalogGameList";
 import { Button } from "@/components/atoms/Button/Button";
-import { GameData, GameResponse } from "@/utils/interfaces/GameData";
+import { GameData } from "@/utils/interfaces/GameData";
 import { getGames } from "@/utils/fetchGames";
 import { Filter } from "@/components/molecules/Filter/Filter";
 import { useSearchParams } from "next/navigation";
