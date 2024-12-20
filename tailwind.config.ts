@@ -19,6 +19,7 @@ const config: Config = {
         'stroke-light': '#8F8F8F',
         'stroke-dark': '#3B3B3B',
         'font-light': '#737373',
+        'font-dark': '#3B3B3B',
         'tag-bg': '#F5F5F4',
         'tag-color': '#3B3B3B',
         'button-dark': '#585660'

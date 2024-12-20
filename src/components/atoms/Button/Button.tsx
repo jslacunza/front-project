@@ -3,17 +3,21 @@ enum Style {
   dark = 'bg-button-dark text-white'
 }
 
+interface ButtonProps {
+  text: string
+  style: 'border' | 'dark'
+  width: string
+  onClick?: () => void
+}
+
 export const Button = ({
   text = 'Button',
   style = 'border',
   width = 'full',
-}:{
-  text: string
-  style: 'border' | 'dark'
-  width: string
-}) => {
+  onClick
+}: ButtonProps) => {
   return (
-    <button className={`w-${width} h-14 rounded-lg ${Style[style]}`}>
+    <button onClick={onClick} className={`w-${width} h-14 rounded-lg ${Style[style]}`}>
       {text}
     </button>
   )
